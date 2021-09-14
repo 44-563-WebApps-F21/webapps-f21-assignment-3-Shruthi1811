@@ -39,8 +39,6 @@
      <li>Snacks-chips</li>
  </ul>
  <a href=“./about.html”> aboutme.html</a>
-</body>
-</html>
 
 <hr>
 
@@ -77,3 +75,39 @@
     <td>2$</td>
 </tr>
 </table>
+
+<hr>
+
+<pre>
+<h1>Bipartite Graph Check</h1>
+int n;
+vector<vector<int>> adj;
+
+vector<int> side(n, -1);
+bool is_bipartite = true;
+queue<int> q;
+for (int st = 0; st < n; ++st) {
+    if (side[st] == -1) {
+        q.push(st);
+        side[st] = 0;
+        while (!q.empty()) {
+            <blockquote cite = "https://cp-algorithms.com/graph/bipartite-check.html">
+            int v = q.front();
+            q.pop();
+            for (int u : adj[v]) {
+                if (side[u] == -1) {
+                    side[u] = side[v] ^ 1;
+                    q.push(u);
+                } else {
+                    is_bipartite &= side[u] != side[v];
+                }
+                </blockquote>
+            }
+        }
+    }
+}
+
+cout << (is_bipartite ? "YES" : "NO") << endl;
+</pre>
+</body>
+</html>
