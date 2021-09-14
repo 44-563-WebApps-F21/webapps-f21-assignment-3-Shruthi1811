@@ -4,8 +4,6 @@
 </head>
 <body>
 <h1>shruthi battu </h1>
-</body>
-</html> 
 <h6> Hyderabad </h6>
 Hyderabad isn't just about <b> Charminar</b> or Biryani. The city is a perfect blend of traditional and modern, 
 and boasts of top education and <b> civic</b> infrastructure. If there's any city in India with the charm and
@@ -84,13 +82,15 @@ vector<vector<int>> adj;
 vector<int> side(n, -1);
 bool is_bipartite = true;
 queue<int> q;
-<code>
+
 for (int st = 0; st < n; ++st) {
     if (side[st] == -1) {
         q.push(st);
         side[st] = 0;
+
         while (!q.empty())
          {
+            <blockquote cite = "https://cp-algorithms.com/graph/bipartite-check.html">
             int v = q.front();
             q.pop();
             for (int u : adj[v]) {
@@ -100,16 +100,17 @@ for (int st = 0; st < n; ++st) {
                 } else {
                     is_bipartite &= side[u] != side[v];
                 }
+            </blockquote>
             }
         }
     }
 }
-</code>
+
 
 
 cout << (is_bipartite ? "YES" : "NO") << endl;
 </pre>
-
+</body>
 
 
 
