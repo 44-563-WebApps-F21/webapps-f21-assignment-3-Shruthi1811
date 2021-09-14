@@ -84,13 +84,12 @@ vector<vector<int>> adj;
 vector<int> side(n, -1);
 bool is_bipartite = true;
 queue<int> q;
-    ```
+<code>
 for (int st = 0; st < n; ++st) {
     if (side[st] == -1) {
         q.push(st);
         side[st] = 0;
         while (!q.empty())
-        ```
          {
             int v = q.front();
             q.pop();
@@ -105,6 +104,8 @@ for (int st = 0; st < n; ++st) {
         }
     }
 }
+</code>
+
 
 cout << (is_bipartite ? "YES" : "NO") << endl;
 </pre>
