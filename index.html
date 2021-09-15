@@ -79,6 +79,17 @@
 <hr>
 
 <h1>Bipartite Graph Check</h1>
+
+<blockquote>
+    In the mathematical field of graph theory, a bipartite graph (or bigraph) is a graph whose vertices can be divided 
+    into two disjoint and independent sets {\displaystyle U}U and {\displaystyle V}V such that every edge connects a
+     vertex in {\displaystyle U}U to one in {\displaystyle V}V. Vertex sets {\displaystyle U}U and {\displaystyle V}V
+      are usually called the parts of the graph. Equivalently, a bipartite graph is a graph that does not contain any 
+      odd-length cycles.[
+</blockquote>
+
+<a href="https://en.wikipedia.org/wiki/Bipartite_graph">Click here to know more</a>
+
 <pre>
 int n;
 vector<vector<int>> adj;
@@ -91,7 +102,6 @@ for (int st = 0; st < n; ++st) {
         q.push(st);
         side[st] = 0;
         while (!q.empty()) {
-            <blockquote cite = "https://cp-algorithms.com/graph/bipartite-check.html">
             int v = q.front();
             q.pop();
             for (int u : adj[v]) {
@@ -101,7 +111,6 @@ for (int st = 0; st < n; ++st) {
                 } else {
                     is_bipartite &= side[u] != side[v];
                 }
-                </blockquote>
             }
         }
     }
